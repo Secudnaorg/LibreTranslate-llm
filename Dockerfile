@@ -1,5 +1,5 @@
 # ---------- BUILD STAGE ----------
-FROM nvidia/cuda:13.1.1-cudnn-devel-ubuntu22.04 AS builder
+FROM docker.io/nvidia/cuda:13.1.1-cudnn-devel-ubuntu22.04 AS builder
 
 ENV DEBIAN_FRONTEND=noninteractive
 
