@@ -45,8 +45,11 @@ FROM docker.io/nvidia/cuda:13.1.1-cudnn-runtime-ubuntu22.04
 
 WORKDIR /app
 
+
+
 RUN apt-get update && apt-get install -y \
     libstdc++6 \
+    libgomp1 \
     ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
