@@ -25,8 +25,11 @@ ENV PATH="/root/.cargo/bin:${PATH}"
 RUN git clone --recursive https://github.com/LibreTranslate/LTEngine.git .
 
 # Build with CUDA support
-RUN cargo build --release --features cuda
+ENV CUDAARCHS="75;80;86;89"
+ENV CMAKE_ARGS="-DCMAKE_CUDA_ARCHITECTURES=86" 
+#RTX 3090 → 86
 
+RUN cargo build --release --features cuda
 # ---------- RUNTIME STAGE ----------
 FROM docker.io/nvidia/cuda:13.1.1-cudnn-runtime-ubuntu22.04
 
