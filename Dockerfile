@@ -28,6 +28,14 @@ RUN git clone --recursive https://github.com/LibreTranslate/LTEngine.git .
 ENV CUDAARCHS="75;80;86;89"
 ENV CMAKE_ARGS="-DCMAKE_CUDA_ARCHITECTURES=86" 
 #RTX 3090 → 86
+# RTX 2080 → 75
+# RTX 5000 (Turing) → 75
+# RTX 3090 → 86
+# RTX A5000 → 86
+# RTX 4090 → 89
+# A100 → 80
+# H100 → 90
+
 
 RUN cargo build --release --features cuda
 # ---------- RUNTIME STAGE ----------
