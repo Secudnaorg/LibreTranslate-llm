@@ -28,7 +28,7 @@ RUN git clone --recursive https://github.com/LibreTranslate/LTEngine.git .
 RUN cargo build --release --features cuda
 
 # ---------- RUNTIME STAGE ----------
-FROM nvidia/cuda:13.1.1-cudnn-runtime-ubuntu22.04
+FROM docker.io/nvidia/cuda:13.1.1-cudnn-runtime-ubuntu22.04
 
 WORKDIR /app
 
