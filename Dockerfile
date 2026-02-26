@@ -30,6 +30,8 @@ RUN cargo build --release --features cuda
 # ---------- RUNTIME STAGE ----------
 FROM docker.io/nvidia/cuda:13.1.1-cudnn-runtime-ubuntu22.04
 
+
+
 WORKDIR /app
 
 RUN apt-get update && apt-get install -y \
